@@ -3,7 +3,7 @@ name: setting up environment
 on: [push]
     
 env:
- username: Area69Lab
+ username: RealmeFirmwareUpdater
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -41,6 +41,7 @@ jobs:
          run: |
            ls
            cd source
+           pip install .
            docker container prune --force
            docker build . -t mirror-bot
        - name: running Docker
